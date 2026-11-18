@@ -1,6 +1,9 @@
 # KIT ILIAS Sync — Quick README
 
-Python/Playwright command-line tool for syncing course files from KIT ILIAS. Traverses nested folders, supports visual section grouping, and skips forums by default. Existing downloads are retained.
+Simple Python/Playwright command-line tool for syncing course files from KIT ILIAS. Traverses nested folders, supports visual section grouping, and skips forums by default. Existing downloads are retained.
+* Only lecture materials - slides and pdfs are downloaded
+* Ignores forum messages and lecture recordings
+* Ignores literature
 
 ## First-time setup
 
