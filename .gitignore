@@ -1,0 +1,11 @@
+# ILIAS downloaded data and authentication
+/ilias_data/
+
+# Python virtual environment
+/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+/test_sync.py

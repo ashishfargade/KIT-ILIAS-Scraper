@@ -1,0 +1,10 @@
+$ErrorActionPreference = 'Stop'
+Set-Location $PSScriptRoot
+if (-not (Get-Command py -ErrorAction SilentlyContinue)) {
+  throw 'Python launcher (py) not found. Install Python 3.11+ from python.org and select Add to PATH.'
+}
+py -3 -m venv .venv
+& .\.venv\Scripts\python.exe -m pip install --upgrade pip
+& .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+& .\.venv\Scripts\python.exe -m playwright install chromium
+Write-Host 'Setup complete. Next: .\ilias.ps1 login; .\ilias.ps1 init; .\ilias.ps1 sync'
