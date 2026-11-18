@@ -40,7 +40,7 @@ Run commands below from the project directory with the virtual environment activ
 
 ```bash
 python ilias_sync.py login --terminal   # Prompt for KIT username/password (headless)
-python ilias_sync.py init               # Add example courses: ABDA and Algorithms II
+python ilias_sync.py init               # Add example course
 python ilias_sync.py list               # Confirm registered courses
 python ilias_sync.py check-auth         # Verify authenticated course access
 python ilias_sync.py sync               # Download/sync all courses
@@ -52,8 +52,7 @@ Alternatively, use `python ilias_sync.py login` for a visible browser login; use
 
 ```bash
 python ilias_sync.py sync                   # Sync all registered courses
-python ilias_sync.py sync --course 2971754 # Sync ABDA only
-python ilias_sync.py sync --course 3057194 # Sync Algorithms II only
+python ilias_sync.py sync --course [course_id] # Sync course
 python ilias_sync.py list                   # List courses
 python ilias_sync.py status                 # Show sync history
 python ilias_sync.py check-auth             # Check saved login
@@ -65,9 +64,9 @@ python ilias_sync.py login --terminal       # Renew login if expired
 **PowerShell** (single-quote URLs to preserve `&`):
 
 ```powershell
-python .\ilias_sync.py add 'https://ilias.studium.kit.edu/ilias.php?baseClass=ilrepositorygui&cmdClass=ilObjCourseGUI&cmd=view&ref_id=2971754' --name 'ABDA'
-python .\ilias_sync.py add 'https://ilias.studium.kit.edu/ilias.php?baseClass=ilrepositorygui&cmdClass=ilObjCourseGUI&cmd=view&ref_id=3057194' --name 'Algorithms II'
-python .\ilias_sync.py remove 2971754
+python .\ilias_sync.py add 'https://ilias.studium.kit.edu/ilias.php?baseClass=ilrepositorygui&cmdClass=ilObjCourseGUI&cmd=view&ref_id=[course_id]' --name 'course_name'
+
+python .\ilias_sync.py remove [course_id]
 ```
 
 `add` also updates a registered course with the same ID. `remove` unregisters it **without deleting downloaded files**. On Linux/macOS, the same quoted URL commands work with `python ilias_sync.py`.
@@ -87,7 +86,7 @@ python ilias_sync.py --verbose sync         # Verbose logging (global option bef
 Options may be combined, e.g.:
 
 ```bash
-python ilias_sync.py --verbose sync --course 3057194 --max-pages 500 --inspect-links
+python ilias_sync.py --verbose sync --course [course_id] --max-pages 500 --inspect-links
 ```
 
 ## Other commands
